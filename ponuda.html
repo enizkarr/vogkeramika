@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ponuda — VOGKERAMIK d.o.o. Ilijaš</title>
+  <meta name="description" content="Podne, zidne i vanjske keramičke pločice, ljepila, hidroizolacija i silikoni. Kalkulator potrebne količine pločica.">
+  <link rel="icon" href="images/logo-znak.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== ZAGLAVLJE (isto na svim stranicama) ========== -->
+  <header class="zaglavlje">
+    <div class="zaglavlje__traka">
+      <div class="kontejner">
+        <a href="tel:+38762506525">☎ 062 506 525</a>
+        <span class="sakrij-mobitel">Pon – Sub: 08:00 – 16:00</span>
+        <a class="sakrij-mobitel" href="kontakt.html#lokacija">Malešićki put 168, Ilijaš</a>
+      </div>
+    </div>
+    <div class="kontejner zaglavlje__glavno">
+      <a class="logo" href="index.html" aria-label="VOGKERAMIK — početna">
+        <img class="logo__znak" src="images/logo-znak.svg" alt="">
+        <img class="logo__tekst" src="images/logo-tekst.svg" alt="VOGKERAMIK d.o.o. Ilijaš">
+      </a>
+      <button class="meni-dugme" type="button" aria-label="Meni" aria-expanded="false" aria-controls="navigacija">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <nav class="navigacija" id="navigacija">
+        <ul>
+          <li><a href="index.html">Početna</a></li>
+          <li><a href="ponuda.html" class="aktivno">Ponuda</a></li>
+          <li><a href="o-nama.html">O nama</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="naslovna-traka">
+      <div class="kontejner">
+        <h1>Ponuda</h1>
+        <p>Pogledajte dio naše ponude pločica i materijala. U prodavnici imamo još mnogo toga — za cijene i dostupnost nas kontaktirajte.</p>
+      </div>
+    </section>
+
+    <!-- ========== KATALOG ========== -->
+    <section class="sekcija">
+      <div class="kontejner">
+        <div class="tabovi" role="tablist">
+          <button class="tab" type="button" role="tab" data-tip="plocica" aria-selected="true">Pločice</button>
+          <button class="tab" type="button" role="tab" data-tip="ostalo" aria-selected="false">Ostali proizvodi</button>
+        </div>
+
+        <div class="filteri">
+          <div class="cipovi" id="cipovi"></div>
+        </div>
+        <div class="filteri">
+          <label class="vidljivo-citacu" for="pretraga">Pretraga</label>
+          <input class="polje filteri__pretraga" id="pretraga" type="search" placeholder="Pretraga po nazivu…">
+          <div class="filteri__desno" data-samo-plocice>
+            <label class="vidljivo-citacu" for="filter-prostorija">Prostorija</label>
+            <select class="izbor" id="filter-prostorija"></select>
+            <label class="vidljivo-citacu" for="filter-povrsina">Površina</label>
+            <select class="izbor" id="filter-povrsina"></select>
+          </div>
+        </div>
+
+        <p class="broj-rezultata" id="broj-rezultata"></p>
+        <div class="proizvodi-mreza" id="katalog"></div>
+      </div>
+    </section>
+
+    <!-- ========== KALKULATOR ========== -->
+    <section class="sekcija sekcija--svijetla" id="kalkulator-sekcija">
+      <div class="kontejner">
+        <div class="sekcija__naslov">
+          <h2 id="kalkulator-naslov">Kalkulator pločica</h2>
+          <p>Unesite mjere prostorije i saznajte koliko kvadrata pločica vam treba.</p>
+        </div>
+        <div class="kalkulator">
+          <form class="kalkulator__forma" id="kalkulator" aria-labelledby="kalkulator-naslov">
+            <div class="kalkulator__nacin cipovi" role="radiogroup" aria-label="Šta oblažete">
+              <label class="cip"><input type="radio" name="nacin" value="pod" checked> Pod</label>
+              <label class="cip"><input type="radio" name="nacin" value="zid"> Zidovi</label>
+            </div>
+            <div class="kalkulator__polja">
+              <label class="oznaka-polja">Dužina prostorije (m)
+                <input class="polje" name="duzina" type="text" inputmode="decimal" value="4">
+              </label>
+              <label class="oznaka-polja">Širina prostorije (m)
+                <input class="polje" name="sirina" type="text" inputmode="decimal" value="3">
+              </label>
+              <label class="oznaka-polja" id="polje-visina" hidden>Visina zidova (m)
+                <input class="polje" name="visina" type="text" inputmode="decimal" value="2,5">
+              </label>
+              <label class="oznaka-polja" id="polje-otvori" hidden>Vrata i prozori (m²)
+                <input class="polje" name="otvori" type="text" inputmode="decimal" value="0">
+                <small>Površina koja se ne oblaže</small>
+              </label>
+              <label class="oznaka-polja">Rezerva za rezanje
+                <select class="izbor" name="rezerva">
+                  <option value="5">5 % — jednostavno postavljanje</option>
+                  <option value="10" selected>10 % — preporučeno</option>
+                  <option value="15">15 % — dijagonalno / mnogo rezanja</option>
+                </select>
+              </label>
+              <label class="oznaka-polja">m² u jednoj kutiji
+                <input class="polje" name="kutija" type="text" inputmode="decimal" placeholder="npr. 1,44">
+                <small>Opcionalno — za broj kutija</small>
+              </label>
+            </div>
+            <div class="kalkulator__rezultat" id="kalkulator-rezultat" aria-live="polite"></div>
+          </form>
+
+          <div class="kalkulator__info">
+            <h3>Kako računamo</h3>
+            <ul>
+              <li><strong>Pod:</strong> dužina × širina.</li>
+              <li><strong>Zidovi:</strong> obim prostorije (2 × dužina + 2 × širina) × visina, umanjeno za vrata i prozore.</li>
+              <li><strong>Rezerva</strong> pokriva pločice koje se režu ili slome pri postavljanju. Majstori obično računaju 10 %.</li>
+              <li>Pločice se prodaju u kutijama, pa se količina zaokružuje na cijelu kutiju.</li>
+            </ul>
+            <p>Niste sigurni? Pošaljite nam mjere i rado ćemo izračunati umjesto vas.</p>
+            <a class="dugme dugme--plavo" href="kontakt.html">Pošaljite upit</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Prozor s detaljima proizvoda -->
+  <dialog class="prozor" id="detalji">
+    <button class="prozor__zatvori" type="button" aria-label="Zatvori">×</button>
+    <div class="prozor__sadrzaj"></div>
+  </dialog>
+
+  <!-- ========== PODNOŽJE (isto na svim stranicama) ========== -->
+  <footer class="podnozje">
+    <div class="kontejner">
+      <div class="podnozje__mreza">
+        <div>
+          <a class="podnozje__logo" href="index.html"><img src="images/logo-tekst.svg" alt="VOGKERAMIK d.o.o. Ilijaš"></a>
+          <p>Porodična prodavnica keramičkih pločica i materijala za postavljanje.</p>
+        </div>
+        <div>
+          <h3>Stranice</h3>
+          <ul>
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="ponuda.html">Ponuda</a></li>
+            <li><a href="o-nama.html">O nama</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Kontakt</h3>
+          <ul>
+            <li><a href="tel:+38762506525">062 506 525</a></li>
+            <li><a href="mailto:info@vogkeramik.ba">info@vogkeramik.ba</a></li>
+            <li><a href="kontakt.html#lokacija">Malešićki put 168, Ilijaš</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Radno vrijeme</h3>
+          <ul>
+            <li>Ponedjeljak – Subota: 08:00 – 16:00</li>
+            <li>Nedjelja: zatvoreno</li>
+          </ul>
+        </div>
+      </div>
+      <div class="podnozje__dno">© <span data-godina>2026</span> VOGKERAMIK d.o.o. Ilijaš. Sva prava zadržana.</div>
+    </div>
+  </footer>
+
+  <script src="js/podaci.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

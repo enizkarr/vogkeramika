@@ -1,0 +1,7 @@
+# Sistemske datoteke
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Postavke uređivača
+.vscode/

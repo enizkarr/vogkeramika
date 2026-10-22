@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>O nama — VOGKERAMIK d.o.o. Ilijaš</title>
+  <meta name="description" content="VOGKERAMIK d.o.o. je porodična firma iz Ilijaša za prodaju keramičkih pločica i materijala za postavljanje.">
+  <link rel="icon" href="images/logo-znak.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== ZAGLAVLJE (isto na svim stranicama) ========== -->
+  <header class="zaglavlje">
+    <div class="zaglavlje__traka">
+      <div class="kontejner">
+        <a href="tel:+38762506525">☎ 062 506 525</a>
+        <span class="sakrij-mobitel">Pon – Sub: 08:00 – 16:00</span>
+        <a class="sakrij-mobitel" href="kontakt.html#lokacija">Malešićki put 168, Ilijaš</a>
+      </div>
+    </div>
+    <div class="kontejner zaglavlje__glavno">
+      <a class="logo" href="index.html" aria-label="VOGKERAMIK — početna">
+        <img class="logo__znak" src="images/logo-znak.svg" alt="">
+        <img class="logo__tekst" src="images/logo-tekst.svg" alt="VOGKERAMIK d.o.o. Ilijaš">
+      </a>
+      <button class="meni-dugme" type="button" aria-label="Meni" aria-expanded="false" aria-controls="navigacija">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <nav class="navigacija" id="navigacija">
+        <ul>
+          <li><a href="index.html">Početna</a></li>
+          <li><a href="ponuda.html">Ponuda</a></li>
+          <li><a href="o-nama.html" class="aktivno">O nama</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="naslovna-traka">
+      <div class="kontejner">
+        <h1>O nama</h1>
+        <p>Porodična firma iz Ilijaša.</p>
+      </div>
+    </section>
+
+    <section class="sekcija">
+      <div class="kontejner o-nama">
+        <div class="o-nama__tekst">
+          <!-- Ovaj tekst zamijenite vašom pričom: kada je firma osnovana, ko je vodi, čime se ponosite. -->
+          <h2>Naša priča</h2>
+          <p>VOGKERAMIK d.o.o. je porodična firma iz Ilijaša koja se bavi prodajom keramičkih pločica i svega što je potrebno za njihovo postavljanje — od ljepila i hidroizolacije do silikona.</p>
+          <p>Vjerujemo da kupovina pločica treba biti jednostavna. Zato svakom kupcu posvećujemo vrijeme: pomažemo pri izboru, računamo potrebne količine i savjetujemo koji materijal je najbolji za kupatilo, kuhinju, dnevni boravak ili terasu.</p>
+          <p>Bilo da uređujete jednu prostoriju ili gradite cijelu kuću, posjetite nas u prodavnici na Malešićkom putu 168 i pogledajte uzorke uživo.</p>
+          <div class="hero__dugmad">
+            <a class="dugme dugme--plavo" href="ponuda.html">Pogledajte ponudu</a>
+            <a class="dugme dugme--obrub-tamno" href="kontakt.html">Kontaktirajte nas</a>
+          </div>
+        </div>
+        <div class="o-nama__slika">
+          <!-- Kada budete imali fotografiju prodavnice, zamijenite logo njom: images/prodavnica.jpg -->
+          <img src="images/logo.svg" alt="VOGKERAMIK d.o.o. Ilijaš">
+        </div>
+      </div>
+    </section>
+
+    <section class="sekcija sekcija--svijetla">
+      <div class="kontejner">
+        <div class="sekcija__naslov">
+          <h2>Šta možete očekivati</h2>
+        </div>
+        <div class="prednosti">
+          <div class="prednost">
+            <h3>Iskren savjet</h3>
+            <p>Preporučit ćemo ono što zaista odgovara vašem prostoru i budžetu.</p>
+          </div>
+          <div class="prednost">
+            <h3>Uzorci uživo</h3>
+            <p>U prodavnici možete vidjeti i dodirnuti pločice prije kupovine.</p>
+          </div>
+          <div class="prednost">
+            <h3>Pomoć s količinama</h3>
+            <p>Izračunat ćemo koliko pločica, ljepila i hidroizolacije vam treba.</p>
+          </div>
+          <div class="prednost">
+            <h3>Kompletan materijal</h3>
+            <p>Uz pločice nudimo i ljepila, hidroizolaciju i silikone.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Prozor s detaljima proizvoda -->
+  <dialog class="prozor" id="detalji">
+    <button class="prozor__zatvori" type="button" aria-label="Zatvori">×</button>
+    <div class="prozor__sadrzaj"></div>
+  </dialog>
+
+  <!-- ========== PODNOŽJE (isto na svim stranicama) ========== -->
+  <footer class="podnozje">
+    <div class="kontejner">
+      <div class="podnozje__mreza">
+        <div>
+          <a class="podnozje__logo" href="index.html"><img src="images/logo-tekst.svg" alt="VOGKERAMIK d.o.o. Ilijaš"></a>
+          <p>Porodična prodavnica keramičkih pločica i materijala za postavljanje.</p>
+        </div>
+        <div>
+          <h3>Stranice</h3>
+          <ul>
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="ponuda.html">Ponuda</a></li>
+            <li><a href="o-nama.html">O nama</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Kontakt</h3>
+          <ul>
+            <li><a href="tel:+38762506525">062 506 525</a></li>
+            <li><a href="mailto:info@vogkeramik.ba">info@vogkeramik.ba</a></li>
+            <li><a href="kontakt.html#lokacija">Malešićki put 168, Ilijaš</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Radno vrijeme</h3>
+          <ul>
+            <li>Ponedjeljak – Subota: 08:00 – 16:00</li>
+            <li>Nedjelja: zatvoreno</li>
+          </ul>
+        </div>
+      </div>
+      <div class="podnozje__dno">© <span data-godina>2026</span> VOGKERAMIK d.o.o. Ilijaš. Sva prava zadržana.</div>
+    </div>
+  </footer>
+
+  <script src="js/podaci.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

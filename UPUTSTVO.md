@@ -54,7 +54,7 @@ ispod. Zatim promijenite vrijednosti:
 ```
 
 - **kategorije**: jedna ili više od `"Podne"`, `"Zidne"`, `"Vanjske"`, npr. `["Podne", "Zidne"]`.
-- **prostorije**: npr. `["Kupatilo", "Kuhinja"]`. Nove prostorije se same pojave u filteru.
+- **prostorije**: npr. `["Kupatilo", "Kuhinja"]`. Prikazuju se u detaljima pločice.
 - **opis**: može ostati prazan: `opis: "",`
 - Dodajte red `izdvojeno: true,` ako želite da se pločica prikaže na početnoj stranici
   (prikazuju se prve 4 izdvojene).

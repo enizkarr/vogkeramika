@@ -238,14 +238,12 @@ function postaviKatalog() {
   const stanje = {
     tip: "plocica",
     kategorija: "",
-    prostorija: "",
     povrsina: "",
     pretraga: "",
   };
 
   const tabovi = document.querySelectorAll(".tab");
   const cipovi = document.getElementById("cipovi");
-  const izborProstorija = document.getElementById("filter-prostorija");
   const izborPovrsina = document.getElementById("filter-povrsina");
   const pretraga = document.getElementById("pretraga");
   const brojRezultata = document.getElementById("broj-rezultata");
@@ -263,7 +261,6 @@ function postaviKatalog() {
       vrijednosti.map((v) => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join("");
   }
 
-  popuniIzbor(izborProstorija, jedinstveneVrijednosti(plocice.flatMap((p) => p.prostorije || [])), "Sve prostorije");
   popuniIzbor(izborPovrsina, jedinstveneVrijednosti(plocice.map((p) => p.povrsina).filter(Boolean)), "Sve površine");
 
   function nacrtajCipove() {
@@ -288,7 +285,6 @@ function postaviKatalog() {
     if (p.tip !== stanje.tip) return false;
     if (stanje.kategorija && !oznakeProizvoda(p).includes(stanje.kategorija)) return false;
     if (stanje.tip === "plocica") {
-      if (stanje.prostorija && !(p.prostorije || []).includes(stanje.prostorija)) return false;
       if (stanje.povrsina && p.povrsina !== stanje.povrsina) return false;
     }
     if (stanje.pretraga) {
@@ -319,10 +315,6 @@ function postaviKatalog() {
   }
 
   tabovi.forEach((t) => t.addEventListener("click", () => promijeniTip(t.dataset.tip)));
-  izborProstorija.addEventListener("change", () => {
-    stanje.prostorija = izborProstorija.value;
-    prikazi();
-  });
   izborPovrsina.addEventListener("change", () => {
     stanje.povrsina = izborPovrsina.value;
     prikazi();

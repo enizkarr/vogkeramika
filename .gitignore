@@ -5,3 +5,6 @@ desktop.ini
 
 # Postavke uređivača
 .vscode/
+
+# Izvorne slike s Enmon stranice (na stranici se koriste kopije u images/proizvodi)
+ENMON images/

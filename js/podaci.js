@@ -423,13 +423,5 @@ const PROIZVODI = [
     opis: "Prozirni silikon za precizno zaptivanje ivica, fuga i spojeva u vlažnim prostorijama.",
     slika: "images/proizvodi/ceresit-cs-25-transparentni.webp",
   },
-  {
-    tip: "ostalo",
-    naziv: "Kerakoll Silicone Color 02",
-    kategorija: "Silikoni",
-    pakovanje: "310 ml",
-    opis: "Svijetlosivi silikon za elastično i vodootporno zaptivanje dilatacionih i spojnih fuga.",
-    slika: "images/proizvodi/kerakoll-silicone-color-02.webp",
-  },
 
 ];

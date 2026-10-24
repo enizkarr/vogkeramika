@@ -536,8 +536,8 @@ h3 { font-size: 1.15rem; }
 
 .kategorije-mreza {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
 }
 
 .kategorija-kartica {
@@ -573,7 +573,7 @@ h3 { font-size: 1.15rem; }
 .kategorija-kartica__tekst h3 {
   color: var(--bijela);
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .kategorija-kartica__tekst span {
@@ -581,9 +581,15 @@ h3 { font-size: 1.15rem; }
   color: #cfe3f5;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1024px) {
   .kategorije-mreza {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Zadnja kartica bez para zauzima cijeli red, kao široki baner */
+  .kategorija-kartica:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    aspect-ratio: 2 / 1;
   }
 }
 

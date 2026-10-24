@@ -8,3 +8,6 @@ desktop.ini
 
 # Izvorne slike s Enmon stranice (na stranici se koriste kopije u images/proizvodi)
 ENMON images/
+
+# Izvorne slike s Keradisk stranice (na stranici se koriste kopije u images/proizvodi)
+KERADISK images/

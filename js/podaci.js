@@ -9,7 +9,7 @@
 
   PLOČICE (tip: "plocica")
     naziv       naziv pločice
-    kategorije  jedna ili više od: "Podne", "Zidne", "Vanjske"
+    kategorije  jedna ili više od: "Podne", "Zidne", "Vanjske", "Stepenice"
     prostorije  npr. "Kupatilo", "Kuhinja", "Dnevni boravak", "Spavaća soba", "Hodnik", "Terasa"
     dimenzije   npr. "60x60 cm"
     povrsina    npr. "Mat", "Sjajna", "Polirana", "Protuklizna"
@@ -183,6 +183,130 @@ const PROIZVODI = [
     povrsina: "Mat",
     opis: "Dekor pločica perla/bež tona s ornamentalnim motivima. Mat površina naglašava teksturu dezena.",
     slika: "images/proizvodi/suecia-mix-perla-decor.webp",
+  },
+  {
+    tip: "plocica",
+    naziv: "Calacatta Vagli Glossy",
+    kategorije: ["Podne"],
+    prostorije: ["Dnevni boravak", "Kuhinja", "Hodnik"],
+    dimenzije: "60x120 cm",
+    povrsina: "Sjajna",
+    opis: "Pločica s izgledom mermera, sjajne površine i elegantnih bijelo-sivih žila. Veliki format znači manje fuga i prostraniji izgled.",
+    slika: "images/proizvodi/calacatta-vagli-glossy.webp",
+  },
+  {
+    tip: "plocica",
+    naziv: "Calacatta Vagli Matt Carving",
+    kategorije: ["Podne"],
+    prostorije: ["Dnevni boravak", "Kuhinja", "Hodnik"],
+    dimenzije: "60x120 cm",
+    povrsina: "Mat",
+    opis: "Rektificirana pločica s izgledom mermera Calacatta, u mat izvedbi s blagim reljefom.",
+    slika: "images/proizvodi/calacatta-vagli-matt.webp",
+  },
+  {
+    tip: "plocica",
+    naziv: "Amarone Grey",
+    kategorije: ["Podne"],
+    prostorije: ["Dnevni boravak", "Spavaća soba", "Hodnik"],
+    dimenzije: "60x120 cm",
+    povrsina: "Mat",
+    opis: "Siva podna pločica s mat reljefnom površinom koja unosi mir i ravnotežu u prostor.",
+    slika: "images/proizvodi/amarone-grey.webp",
+  },
+  {
+    tip: "plocica",
+    naziv: "Amarone Ivory",
+    kategorije: ["Podne"],
+    prostorije: ["Dnevni boravak", "Spavaća soba", "Hodnik"],
+    dimenzije: "60x120 cm",
+    povrsina: "Mat",
+    opis: "Svijetla pločica boje slonovače koja vizuelno otvara prostor i unosi otmjenost.",
+    slika: "images/proizvodi/amarone-ivory.webp",
+  },
+  {
+    tip: "plocica",
+    naziv: "Amarante Decor Grey",
+    kategorije: ["Podne"],
+    prostorije: ["Dnevni boravak", "Spavaća soba", "Hodnik"],
+    dimenzije: "20x120 cm",
+    povrsina: "Mat",
+    opis: "Pločica s izgledom sivog drveta i umjerenim reljefom koji vjerno prenosi teksturu drveta.",
+    slika: "images/proizvodi/amarante-decor-grey.webp",
+    mozaik: false, // uska slika s bijelim rubom ne izgleda dobro u mozaiku
+  },
+
+  // ---------- STEPENICE (setovi gazište + čelo) ----------
+
+  {
+    tip: "plocica",
+    naziv: "Stepenice set Sunset Sky",
+    kategorije: ["Stepenice"],
+    prostorije: ["Stepenište"],
+    dimenzije: "120 cm (gazište + čelo)",
+    povrsina: "Sjajna",
+    opis: "Set gazišta i čela s izgledom svijetlog oniksa i toplim žilama. Gazište ima protuklizne žljebove uz prednju ivicu.",
+    slika: "images/proizvodi/stepenice-sunset-sky.webp",
+  },
+  {
+    tip: "plocica",
+    naziv: "Stepenice set Florence Grey",
+    kategorije: ["Stepenice"],
+    prostorije: ["Stepenište"],
+    dimenzije: "120 cm (gazište + čelo)",
+    povrsina: "Sjajna",
+    opis: "Set gazišta i čela sa sivim mermernim izgledom i protukliznim žljebovima na gazištu.",
+    slika: "images/proizvodi/stepenice-florence-grey.webp",
+  },
+  {
+    tip: "plocica",
+    naziv: "Stepenice set Cento Grey",
+    kategorije: ["Stepenice"],
+    prostorije: ["Stepenište"],
+    dimenzije: "120 cm (gazište + čelo)",
+    povrsina: "Mat",
+    opis: "Set gazišta i čela u sivoj boji, mat površine s izgledom betona. Protuklizni žljebovi na gazištu.",
+    slika: "images/proizvodi/stepenice-cento-grey-mat.webp",
+  },
+  {
+    tip: "plocica",
+    naziv: "Stepenice set Cento Graphite",
+    kategorije: ["Stepenice"],
+    prostorije: ["Stepenište"],
+    dimenzije: "120 cm (gazište + čelo)",
+    povrsina: "Mat",
+    opis: "Set gazišta i čela u tamnoj grafit boji, mat površine. Protuklizni žljebovi na gazištu.",
+    slika: "images/proizvodi/stepenice-cento-graphite-mat.webp",
+  },
+  {
+    tip: "plocica",
+    naziv: "Stepenice set Natural Carrara",
+    kategorije: ["Stepenice"],
+    prostorije: ["Stepenište"],
+    dimenzije: "120 cm (gazište + čelo)",
+    povrsina: "Sjajna",
+    opis: "Set gazišta i čela s izgledom bijelog Carrara mermera i sivim žilama.",
+    slika: "images/proizvodi/stepenice-natural-carrara.webp",
+  },
+  {
+    tip: "plocica",
+    naziv: "Stepenice set Casa Bianca",
+    kategorije: ["Stepenice"],
+    prostorije: ["Stepenište"],
+    dimenzije: "120x30 + 120x20 cm",
+    povrsina: "Mat",
+    opis: "Set gazišta (120x30 cm) i čela (120x20 cm) sa zrnastom strukturom granita.",
+    slika: "images/proizvodi/stepenice-casa-bianca.webp",
+  },
+  {
+    tip: "plocica",
+    naziv: "Stepenice set Antisky",
+    kategorije: ["Stepenice"],
+    prostorije: ["Stepenište"],
+    dimenzije: "120 cm (gazište + čelo)",
+    povrsina: "Sjajna",
+    opis: "Set gazišta i čela s izgledom bijelog mermera i izraženim sivim žilama.",
+    slika: "images/proizvodi/stepenice-antisky.webp",
   },
 
   // ---------- OSTALI PROIZVODI ----------

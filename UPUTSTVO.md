@@ -53,7 +53,7 @@ ispod. Zatim promijenite vrijednosti:
   },
 ```
 
-- **kategorije**: jedna ili više od `"Podne"`, `"Zidne"`, `"Vanjske"`, npr. `["Podne", "Zidne"]`.
+- **kategorije**: jedna ili više od `"Podne"`, `"Zidne"`, `"Vanjske"`, `"Stepenice"`, npr. `["Podne", "Zidne"]`.
 - **prostorije**: npr. `["Kupatilo", "Kuhinja"]`. Prikazuju se u detaljima pločice.
 - **opis**: može ostati prazan: `opis: "",`
 - Dodajte red `izdvojeno: true,` ako želite da se pločica prikaže na početnoj stranici

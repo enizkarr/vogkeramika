@@ -148,15 +148,23 @@ function prikaziPocetnu() {
     .map((p) => `<img src="${escapeHtml(p.slika)}" alt="">`)
     .join("");
 
-  // Slika na kartici kategorije: prva pločica samo iz te kategorije (ako postoji),
-  // da se iste slike ne ponavljaju na više kartica
+  // Slika na kartici kategorije: najprije pločica samo iz te kategorije, zatim bilo koja
+  // iz kategorije — ali uvijek ona koju nije već uzela neka ranija kartica
+  const iskoristene = new Set();
   document.querySelectorAll("[data-slika-kategorije]").forEach((img) => {
     const k = img.dataset.slikaKategorije;
-    const uKategoriji = plocice.filter((p) => (p.kategorije || []).includes(k));
-    const p = k === "ostalo"
-      ? PROIZVODI.find((p) => p.tip === "ostalo")
-      : uKategoriji.find((p) => p.kategorije.length === 1) || uKategoriji[0];
-    if (p) img.src = p.slika;
+    const kandidati = k === "ostalo"
+      ? PROIZVODI.filter((p) => p.tip === "ostalo")
+      : plocice.filter((p) => (p.kategorije || []).includes(k) && p.mozaik !== false);
+    const slobodni = kandidati.filter((p) => !iskoristene.has(p.slika));
+    const p =
+      slobodni.find((p) => (p.kategorije || []).length === 1) ||
+      slobodni[0] ||
+      kandidati[0];
+    if (p) {
+      img.src = p.slika;
+      iskoristene.add(p.slika);
+    }
   });
 }
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>VOGKERAMIK d.o.o. Ilijaš — keramičke pločice</title>
-  <meta name="description" content="VOGKERAMIK d.o.o. Ilijaš — podne, zidne i vanjske keramičke pločice, ljepila, hidroizolacija i silikoni. Posjetite nas na adresi Malešićki put 168.">
+  <meta name="description" content="VOGKERAMIK d.o.o. Ilijaš — podne, zidne i vanjske keramičke pločice, ljepila, hidroizolacija i silikoni, te ugradnja pločica. Posjetite nas na adresi Malešićki put 168.">
   <link rel="icon" href="images/logo-znak.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,17 +43,53 @@
 
   <main>
     <!-- ========== UVOD ========== -->
-    <section class="hero">
-      <div class="kontejner">
-        <div>
-          <h1>Keramičke pločice <span>za svaki prostor</span></h1>
-          <p>Podne, zidne i vanjske pločice, ljepila, hidroizolacija i silikoni — sve na jednom mjestu u Ilijašu. Dođite, pogledajte uzorke i posavjetujte se s nama.</p>
-          <div class="hero__dugmad">
-            <a class="dugme dugme--glavno" href="ponuda.html">Pogledajte ponudu</a>
-            <a class="dugme dugme--obrub" href="kontakt.html">Kontaktirajte nas</a>
+    <!-- Slajdovi se mijenjaju strelicama, tačkama ili prevlačenjem prsta (js/main.js) -->
+    <section class="hero" id="hero" aria-roledescription="carousel" aria-label="Istaknuto">
+      <div class="hero__traka">
+        <!-- Slajd 1: pločice -->
+        <div class="hero__slajd" aria-roledescription="slide" aria-label="1 od 2">
+          <div class="kontejner">
+            <div>
+              <h1>Keramičke pločice <span>za svaki prostor</span></h1>
+              <p>Podne, zidne i vanjske pločice, ljepila, hidroizolacija i silikoni — sve na jednom mjestu u Ilijašu. Dođite, pogledajte uzorke i posavjetujte se s nama.</p>
+              <div class="hero__dugmad">
+                <a class="dugme dugme--glavno" href="ponuda.html">Pogledajte ponudu</a>
+                <a class="dugme dugme--obrub" href="kontakt.html">Kontaktirajte nas</a>
+              </div>
+            </div>
+            <div class="hero__mozaik" id="hero-mozaik" aria-hidden="true"></div>
           </div>
         </div>
-        <div class="hero__mozaik" id="hero-mozaik" aria-hidden="true"></div>
+
+        <!-- Slajd 2: ugradnja. Kada budete imali fotografiju s terena, zamijenite ilustraciju: images/ugradnja.jpg -->
+        <div class="hero__slajd" aria-roledescription="slide" aria-label="2 od 2">
+          <div class="kontejner">
+            <div>
+              <h2 class="hero__naslov">Ugradnja pločica <span>od izbora do završenog posla</span></h2>
+              <p>Pored prodaje, bavimo se i ugradnjom keramičkih pločica. Izaberite pločice kod nas, a mi ćemo ih postaviti — u kupatilu, kuhinji, na podu ili terasi.</p>
+              <div class="hero__dugmad">
+                <a class="dugme dugme--glavno" href="tel:+38762506525">Pozovite: 062 506 525</a>
+                <a class="dugme dugme--obrub" href="kontakt.html">Pošaljite upit</a>
+              </div>
+            </div>
+            <div class="hero__ilustracija" aria-hidden="true">
+              <img src="images/ugradnja.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__kontrole">
+        <button class="hero__strelica" type="button" data-smjer="-1" aria-label="Prethodni slajd">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="hero__tacke">
+          <button class="hero__tacka" type="button" aria-label="Slajd 1: pločice"></button>
+          <button class="hero__tacka" type="button" aria-label="Slajd 2: ugradnja"></button>
+        </div>
+        <button class="hero__strelica" type="button" data-smjer="1" aria-label="Sljedeći slajd">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
     </section>
 
@@ -119,7 +155,7 @@
           <div class="prednost">
             <div class="prednost__ikona"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
             <h3>Sve na jednom mjestu</h3>
-            <p>Pločice, ljepila, hidroizolacija i silikoni — sve što vam treba za jedan posao.</p>
+            <p>Pločice, ljepila, hidroizolacija, silikoni i ugradnja — sve što vam treba za jedan posao.</p>
           </div>
           <div class="prednost">
             <div class="prednost__ikona"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
@@ -130,17 +166,25 @@
       </div>
     </section>
 
-    <!-- ========== KALKULATOR I KONTAKT ========== -->
+    <!-- ========== KALKULATOR I UGRADNJA ========== -->
     <section class="sekcija" style="padding-top:0">
-      <div class="kontejner">
-        <div class="poziv">
-          <div>
-            <h2>Koliko pločica vam treba?</h2>
-            <p>Izračunajte potrebnu količinu za pod ili zidove za nekoliko sekundi.</p>
-          </div>
+      <div class="kontejner pozivi">
+        <div class="poziv poziv--svijetli">
+          <div class="poziv__ikona"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11"/><line x1="12" y1="11" x2="12" y2="11"/><line x1="16" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="8" y2="15"/><line x1="12" y1="15" x2="12" y2="15"/><line x1="16" y1="15" x2="16" y2="18"/><line x1="8" y1="18" x2="12" y2="18"/></svg></div>
+          <h2>Koliko pločica vam treba?</h2>
+          <p>Izračunajte potrebnu količinu za pod ili zidove za nekoliko sekundi.</p>
           <div class="poziv__dugmad">
-            <a class="dugme dugme--glavno" href="ponuda.html#kalkulator">Kalkulator pločica</a>
-            <a class="dugme dugme--obrub" href="tel:+38762506525">Pozovite: 062 506 525</a>
+            <a class="dugme dugme--plavo" href="ponuda.html#kalkulator">Kalkulator pločica</a>
+          </div>
+        </div>
+
+        <div class="poziv poziv--tamni">
+          <div class="poziv__ikona"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="3" width="12" height="4" rx="2"/><line x1="12" y1="7" x2="12" y2="11"/><path d="M3 11h18v5l-1.5 2-1.5-2-1.5 2-1.5-2-1.5 2-1.5-2-1.5 2-1.5-2-1.5 2-1.5-2-1.5 2L3 16z"/></svg></div>
+          <h2>Da li vam treba i ugradnja?</h2>
+          <p>Pored prodaje, bavimo se i ugradnjom keramičkih pločica. Pozovite nas i dogovorite postavljanje u vašem kupatilu, kuhinji ili na terasi.</p>
+          <div class="poziv__dugmad">
+            <a class="dugme dugme--glavno" href="tel:+38762506525">Pozovite: 062 506 525</a>
+            <a class="dugme dugme--obrub" href="kontakt.html">Pošaljite upit</a>
           </div>
         </div>
       </div>

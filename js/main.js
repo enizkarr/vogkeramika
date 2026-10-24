@@ -159,6 +159,76 @@ function prikaziPocetnu() {
   });
 }
 
+/* ---------- Početna: slajdovi u uvodu ---------- */
+
+function postaviHeroSlajdove() {
+  const hero = document.getElementById("hero");
+  if (!hero) return;
+
+  const traka = hero.querySelector(".hero__traka");
+  const slajdovi = [...hero.querySelectorAll(".hero__slajd")];
+  const tacke = [...hero.querySelectorAll(".hero__tacka")];
+  const bezAnimacije = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const PAUZA = 7000; // ms između automatskih promjena
+  let trenutni = 0;
+  let tajmer = null;
+
+  function prikazi(i) {
+    trenutni = (i + slajdovi.length) % slajdovi.length;
+    traka.style.transform = `translateX(-${trenutni * 100}%)`;
+    // Skriveni slajd se ne može fokusirati tabom niti ga čita čitač ekrana
+    slajdovi.forEach((s, j) => (s.inert = j !== trenutni));
+    tacke.forEach((t, j) => t.setAttribute("aria-current", j === trenutni ? "true" : "false"));
+  }
+
+  function pokreni() {
+    if (bezAnimacije) return;
+    clearInterval(tajmer);
+    tajmer = setInterval(() => prikazi(trenutni + 1), PAUZA);
+  }
+
+  function zaustavi() {
+    clearInterval(tajmer);
+    tajmer = null;
+  }
+
+  hero.querySelectorAll(".hero__strelica").forEach((dugme) =>
+    dugme.addEventListener("click", () => {
+      prikazi(trenutni + Number(dugme.dataset.smjer));
+      if (tajmer) pokreni();
+    })
+  );
+
+  tacke.forEach((tacka, i) =>
+    tacka.addEventListener("click", () => {
+      prikazi(i);
+      if (tajmer) pokreni();
+    })
+  );
+
+  // Prevlačenje prstom na mobitelu
+  let pocetakX = null;
+  traka.addEventListener("touchstart", (e) => (pocetakX = e.touches[0].clientX), { passive: true });
+  traka.addEventListener("touchend", (e) => {
+    if (pocetakX === null) return;
+    const razlika = e.changedTouches[0].clientX - pocetakX;
+    if (Math.abs(razlika) > 50) {
+      prikazi(trenutni + (razlika < 0 ? 1 : -1));
+      if (tajmer) pokreni();
+    }
+    pocetakX = null;
+  });
+
+  // Pauza dok je miš iznad uvoda ili je fokus u njemu
+  hero.addEventListener("mouseenter", zaustavi);
+  hero.addEventListener("mouseleave", pokreni);
+  hero.addEventListener("focusin", zaustavi);
+  hero.addEventListener("focusout", pokreni);
+
+  prikazi(0);
+  pokreni();
+}
+
 /* ---------- Ponuda: katalog s filterima ---------- */
 
 function postaviKatalog() {
@@ -376,6 +446,7 @@ document.addEventListener("DOMContentLoaded", () => {
   postaviMeni();
   postaviProzor();
   prikaziPocetnu();
+  postaviHeroSlajdove();
   postaviKatalog();
   postaviKalkulator();
   postaviKontaktFormu();

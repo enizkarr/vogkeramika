@@ -410,14 +410,106 @@ h3 { font-size: 1.15rem; }
   transform: translateY(18px);
 }
 
+/* Slajdovi u uvodu: traka se pomjera ulijevo za širinu jednog slajda */
+.hero__traka {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  transition: transform 0.6s ease;
+  touch-action: pan-y;
+}
+
+.hero__slajd {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.hero__naslov {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--bijela);
+}
+
+.hero__naslov span {
+  color: var(--cijan);
+}
+
+.hero__ilustracija img {
+  width: 100%;
+  transform: rotate(-4deg);
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.3));
+}
+
+.hero__kontrole {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero__strelica {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--bijela);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.hero__strelica:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--bijela);
+}
+
+.hero__strelica svg {
+  width: 20px;
+  height: 20px;
+}
+
+.hero__tacke {
+  display: flex;
+  gap: 8px;
+}
+
+.hero__tacka {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: width 0.3s, background 0.3s;
+}
+
+.hero__tacka[aria-current="true"] {
+  width: 28px;
+  background: var(--cijan);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__traka {
+    transition: none;
+  }
+}
+
 @media (max-width: 860px) {
   .hero .kontejner {
     grid-template-columns: 1fr;
     padding-top: 56px;
-    padding-bottom: 64px;
+    padding-bottom: 96px;
   }
 
-  .hero__mozaik {
+  .hero__mozaik,
+  .hero__ilustracija {
     max-width: 420px;
   }
 }
@@ -546,32 +638,88 @@ h3 { font-size: 1.15rem; }
 
 /* ---------- Poziv na akciju ---------- */
 
+/* Dvije kartice jedna do druge: svijetla (kalkulator) i tamna (ugradnja) */
+.pozivi {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
 .poziv {
-  background: linear-gradient(115deg, var(--navy), var(--plava));
-  color: var(--bijela);
   border-radius: 20px;
-  padding: 48px;
+  padding: 40px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .poziv h2 {
-  color: var(--bijela);
-  margin-bottom: 0.3em;
+  font-size: clamp(1.4rem, 2.6vw, 1.75rem);
+  margin-bottom: 0.4em;
 }
 
 .poziv p {
-  margin: 0;
-  color: #d6e6f5;
+  margin: 0 0 28px;
+}
+
+.poziv__ikona {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+.poziv__ikona svg {
+  width: 26px;
+  height: 26px;
 }
 
 .poziv__dugmad {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  margin-top: auto;
+}
+
+.poziv--svijetli {
+  background: var(--pozadina-svijetla);
+  border: 1px solid var(--linija);
+}
+
+.poziv--svijetli p {
+  color: var(--siva);
+}
+
+.poziv--svijetli .poziv__ikona {
+  background: var(--bijela);
+  color: var(--plava);
+  box-shadow: var(--sjena);
+}
+
+.poziv--tamni {
+  background: linear-gradient(115deg, var(--navy), var(--plava));
+  color: var(--bijela);
+}
+
+.poziv--tamni h2 {
+  color: var(--bijela);
+}
+
+.poziv--tamni p {
+  color: #d6e6f5;
+}
+
+.poziv--tamni .poziv__ikona {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--cijan);
+}
+
+@media (max-width: 860px) {
+  .pozivi {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 560px) {

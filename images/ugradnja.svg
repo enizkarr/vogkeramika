@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 370" role="img" aria-label="Ugradnja keramičkih pločica">
+  <defs>
+    <linearGradient id="mermer-a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e6e9ee"/>
+    </linearGradient>
+    <linearGradient id="mermer-b" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6f3ee"/>
+      <stop offset="1" stop-color="#e3ddd3"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef2f6"/>
+      <stop offset="1" stop-color="#b9c4ce"/>
+    </linearGradient>
+    <!-- Ljepilo izvučeno nazubljenom gleterom -->
+    <pattern id="ljepilo" width="14" height="14" patternUnits="userSpaceOnUse">
+      <rect width="14" height="14" fill="#b4bec8"/>
+      <rect y="8" width="14" height="6" fill="#95a2ae"/>
+    </pattern>
+  </defs>
+
+  <!-- Dio poda gdje je naneseno ljepilo -->
+  <rect x="370" y="130" width="110" height="110" rx="6" fill="url(#ljepilo)"/>
+  <rect x="250" y="250" width="230" height="110" rx="6" fill="url(#ljepilo)"/>
+
+  <!-- Postavljene pločice -->
+  <g stroke="#ffffff" stroke-opacity="0.6" stroke-width="1">
+    <rect x="10"  y="10"  width="110" height="110" rx="6" fill="url(#mermer-a)"/>
+    <rect x="130" y="10"  width="110" height="110" rx="6" fill="url(#mermer-b)"/>
+    <rect x="250" y="10"  width="110" height="110" rx="6" fill="url(#mermer-a)"/>
+    <rect x="370" y="10"  width="110" height="110" rx="6" fill="url(#mermer-b)"/>
+    <rect x="10"  y="130" width="110" height="110" rx="6" fill="url(#mermer-b)"/>
+    <rect x="130" y="130" width="110" height="110" rx="6" fill="url(#mermer-a)"/>
+    <rect x="250" y="130" width="110" height="110" rx="6" fill="url(#mermer-b)"/>
+    <rect x="10"  y="250" width="110" height="110" rx="6" fill="url(#mermer-a)"/>
+    <rect x="130" y="250" width="110" height="110" rx="6" fill="url(#mermer-b)"/>
+  </g>
+
+  <!-- Žilice mermera -->
+  <g fill="none" stroke="#c9ced6" stroke-width="1.5" stroke-linecap="round">
+    <path d="M18 40 C50 55 70 30 112 70"/>
+    <path d="M258 100 C290 80 300 105 352 60"/>
+    <path d="M140 160 C170 190 200 150 232 210"/>
+    <path d="M20 330 C55 300 80 340 112 290"/>
+  </g>
+  <g fill="none" stroke="#d6cbb9" stroke-width="1.5" stroke-linecap="round">
+    <path d="M140 30 C175 60 195 40 232 95"/>
+    <path d="M378 90 C410 60 430 95 472 40"/>
+    <path d="M18 220 C50 180 85 205 112 150"/>
+    <path d="M260 215 C295 175 320 210 352 150"/>
+    <path d="M140 340 C170 300 200 330 232 270"/>
+  </g>
+
+  <!-- Križići (distanceri) između pločica -->
+  <g fill="#00aeef">
+    <path id="kriz" d="M-8 -2h6v-6h4v6h6v4h-6v6h-4v-6h-6z" transform="translate(125 125)"/>
+    <use href="#kriz" x="120"/>
+    <use href="#kriz" x="240"/>
+    <use href="#kriz" y="120"/>
+    <use href="#kriz" x="120" y="120"/>
+  </g>
+
+  <!-- Nazubljena gletarica -->
+  <g transform="translate(375 300) rotate(-16)">
+    <path d="M-85 -28 H85 V22 H75 V12 H65 V22 H55 V12 H45 V22 H35 V12 H25 V22 H15 V12 H5 V22 H-5 V12 H-15 V22 H-25 V12 H-35 V22 H-45 V12 H-55 V22 H-65 V12 H-75 V22 H-85 Z"
+          fill="url(#metal)" stroke="#7f8d9a" stroke-width="1.5" stroke-linejoin="round"/>
+    <rect x="-10" y="-56" width="20" height="30" rx="3" fill="#5f6c79"/>
+    <rect x="-60" y="-78" width="120" height="28" rx="14" fill="#00aeef"/>
+    <rect x="-52" y="-73" width="104" height="6" rx="3" fill="#ffffff" fill-opacity="0.35"/>
+  </g>
+</svg>

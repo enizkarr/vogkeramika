@@ -141,8 +141,9 @@ function prikaziPocetnu() {
     .slice(0, 4)
     .forEach((p) => mreza.appendChild(napraviKarticu(p)));
 
-  // Mozaik u uvodu: prvih 6 pločica
+  // Mozaik u uvodu: prvih 6 pločica, osim onih označenih s mozaik: false
   document.getElementById("hero-mozaik").innerHTML = plocice
+    .filter((p) => p.mozaik !== false)
     .slice(0, 6)
     .map((p) => `<img src="${escapeHtml(p.slika)}" alt="">`)
     .join("");
